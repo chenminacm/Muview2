@@ -2,6 +2,7 @@
 #include "ui_preferences.h"
 #include <QColorDialog>
 #include <QColor>
+#include <QDebug>
 
 Preferences::Preferences(QWidget *parent) :
     QDialog(parent),
@@ -126,4 +127,11 @@ QString Preferences::getColorQuantity()
 QString Preferences::getVectorOrigin()
 {
     return ui->vectorOriginGroup->checkedButton()->text();
+}
+
+QList<QColor> Preferences::getCustomColorScale()
+{
+    QList<QColor> colors;
+    colors << customColor1 << customColor2 << customColor3;
+    return colors;
 }
